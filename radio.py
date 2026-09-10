@@ -45,7 +45,7 @@ def display_status():
 def search_stations(query, search_by="name"):
     with console.status(f"[bold green]Scanning open-source frequencies for '{query}'...", spinner="bouncingBar"):
         try:
-            url = f"{API_BASE_URL}/stations/by{search_by}/{query}?limit=15"
+            url = f"{API_BASE_URL}/stations/by{search_by}/{query}?limit=1000"
             headers = {'User-Agent': 'waqar-radio-cli/1.0'}
             response = requests.get(url, headers=headers)
             response.raise_for_status()
